@@ -1,0 +1,7 @@
+{
+  "name": "appfstm",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
