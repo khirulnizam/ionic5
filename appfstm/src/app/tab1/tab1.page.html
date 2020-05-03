@@ -3,20 +3,37 @@
     <ion-title>
       Pengenalan FSTM
     </ion-title>
+      <ion-buttons color="light" slot="primary">
+        <ion-button [routerLink]="['/info']">
+          <ion-icon name="information-circle-outline"></ion-icon>
+        </ion-button>
+        <ion-button (click)="callform()">
+          <ion-icon name="reader-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
-  <ion-card >
-    <img src="/assets/lanskap.png">
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar >
+      <ion-title size="large">Pengenalan FSTM</ion-title>
+      
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <img src="assets/lanskap.png">
     <ion-card-header>
-      <strong>FSTM KUIS</strong>
+      <strong>Selamat datang ke FSTM</strong>
     </ion-card-header>
-    <ion-card-content color="secondary">
-      <p><strong>PENGENALAN FSTM KUIS</strong><br>
-        Pada tahun 2011 penstrukturan semula telah dilakukan dengan nama Fakulti Sains dan Teknologi Maklumat (FSTM).
-        </p>
-        <br>
+  <ion-card-content>
+    <p>
+      FSTM ditubuhkan pada <i>1999</i> adalah fakulti teknologi maklumat 
+      yang ditubuhkan untuk mengendalikan program teknologi
+      maklumat di KUIS.
+    </p>
+    <br>
           <p>
         Kini, FSTM mempunyai dua buah jabatan utama iaitu Jabatan Teknologi Maklumat (Multimedia) dan Jabatan Sains Komputer.
         </p>
@@ -27,6 +44,8 @@
         <br>
           <p>
         ( http://www.kuis.edu.my/v4/kemasukan/program-pengajian )</p>
-    </ion-card-content>
+  </ion-card-content>
   </ion-card>
+
+
 </ion-content>
