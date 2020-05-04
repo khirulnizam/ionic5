@@ -1,9 +1,55 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>form</ion-title>
+  <ion-toolbar color="tertiary">
+    <ion-title>Input Form Sample</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <!-- add using skala variable -->
+
+  <ion-item>
+		<ion-input type="text"
+		placeholder="Insert num1..."
+		[(ngModel)]="num1">
+		</ion-input>
+	</ion-item>
+	<ion-item>
+		<ion-input type="text"
+		placeholder="Insert num2..."
+		[(ngModel)]="num2">
+		</ion-input>
+  </ion-item>
+  <ion-button color="success"
+    (click)="performAdd()">
+			Straight Add
+  </ion-button>
+
+  <!-- add using array variable -->
+	<ion-item>
+		<ion-input type="text"
+		placeholder="Insert num1..."
+		[(ngModel)]="n[0]">
+		</ion-input>
+	</ion-item>
+	<ion-item>
+		<ion-input type="text"
+		placeholder="Insert num2..."
+		[(ngModel)]="n[1]">
+		</ion-input>
+  </ion-item>
+  
+  <ion-item>
+		<ion-input type="text"
+		placeholder="Insert num3..."
+		[(ngModel)]="n[2]">
+		</ion-input>
+	</ion-item>
+
+  
+  
+  <ion-button color="warning"
+    (click)="performAddArray()">
+			Array Add
+	</ion-button>
 
 </ion-content>
