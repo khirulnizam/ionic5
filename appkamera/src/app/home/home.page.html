@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      Apps Camera
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <img src="./assets/bannerionic.png">
+  <ion-item>
+    <ion-button (click)="useCamera()">
+    <ion-icon name="camera-outline">
+      <!-- ionicons.com -->
+    </ion-icon>
+    </ion-button>
+  </ion-item>
+
+  <div *ngIf="gambar; else noImageYet">
+    <img src="{{gambar}}">
+  </div>
+  <ng-template #noImageYet>
+    <img src="./assets/noimagep.png">
+  </ng-template>
+
+</ion-content>

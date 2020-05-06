@@ -6,50 +6,47 @@
 
 <ion-content>
   <!-- add using skala variable -->
-
   <ion-item>
-		<ion-input type="text"
-		placeholder="Insert num1..."
-		[(ngModel)]="num1">
-		</ion-input>
-	</ion-item>
-	<ion-item>
-		<ion-input type="text"
-		placeholder="Insert num2..."
-		[(ngModel)]="num2">
-		</ion-input>
+	  <ion-input type ="text" [(ngModel)]="num1"
+	  placeholder="Insert 1st number">
+	  </ion-input>
   </ion-item>
-  <ion-button color="success"
-    (click)="performAdd()">
-			Straight Add
-  </ion-button>
-
-  <!-- add using array variable -->
-	<ion-item>
-		<ion-input type="text"
-		placeholder="Insert num1..."
-		[(ngModel)]="n[0]">
-		</ion-input>
-	</ion-item>
-	<ion-item>
-		<ion-input type="text"
-		placeholder="Insert num2..."
-		[(ngModel)]="n[1]">
-		</ion-input>
-  </ion-item>
-  
   <ion-item>
-		<ion-input type="text"
-		placeholder="Insert num3..."
-		[(ngModel)]="n[2]">
-		</ion-input>
-	</ion-item>
-
-  
-  
-  <ion-button color="warning"
-    (click)="performAddArray()">
-			Array Add
+	<ion-input type ="text" [(ngModel)]="num2"
+	placeholder="Insert 2nd number">
+	</ion-input>
+  </ion-item>
+  <ion-item>
+	<ion-button (click)="performAdd()" color="success">
+		Add 2 numbers
 	</ion-button>
+  </ion-item>
+
+  <!-- add numbers in ARRAY -->
+  <ion-item>
+	<ion-input type ="text" [(ngModel)]="n[0]"
+	placeholder="Insert 1st number">
+	</ion-input>
+</ion-item>
+<ion-item>
+  <ion-input type ="text" [(ngModel)]="n[1]"
+  placeholder="Insert 2nd number">
+  </ion-input>
+</ion-item>
+<ion-item>
+	<ion-input type ="text" [(ngModel)]="n[2]"
+	placeholder="Insert 3rd number">
+	</ion-input>
+</ion-item>
+<ion-item>
+	<ion-input type ="text" [(ngModel)]="n[3]"
+	placeholder="Insert 4th number">
+	</ion-input>
+  </ion-item>
+<ion-item>
+  <ion-button (click)="performAddArray()" color="warning">
+	  Add numbers in Array
+  </ion-button>
+</ion-item>
 
 </ion-content>

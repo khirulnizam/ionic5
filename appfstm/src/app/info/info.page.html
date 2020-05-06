@@ -1,9 +1,18 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>info</ion-title>
+  <ion-toolbar color="tertiary">
+    <ion-title>Click camera icon</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-item>
+    <ion-button (click)="useCamera()">
+      <ion-icon name="camera-outline" >
+      </ion-icon>
+    </ion-button>
+  </ion-item>
 
+  <div *ngIf="gambar">
+    <img src={{gambar}}>
+  </div>
 </ion-content>
