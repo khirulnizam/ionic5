@@ -1,5 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
+    
     <ion-title>
       Apps Camera
     </ion-title>
@@ -9,7 +10,8 @@
 <ion-content [fullscreen]="true">
   <img src="./assets/bannerionic.png">
   <ion-item>
-    <ion-button (click)="useCamera()">
+    <ion-button (click)="useCamera()"
+    expand="block">
     <ion-icon name="camera-outline">
       <!-- ionicons.com -->
     </ion-icon>

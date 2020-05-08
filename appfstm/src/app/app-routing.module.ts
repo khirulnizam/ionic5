@@ -14,6 +14,14 @@ const routes: Routes = [
     path: 'form',
     loadChildren: () => import('./form/form.module').then( m => m.FormPageModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'iterate',
+    loadChildren: () => import('./iterate/iterate.module').then( m => m.IteratePageModule)
+  },
   
 ];
 @NgModule({

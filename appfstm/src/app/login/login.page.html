@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="success">
+  	<ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-card>
+		<img src="./assets/unlock-ionkerul.png">
+		<ion-card-header></ion-card-header>
+
+		<ion-card-content>
+			<ion-item>
+				<ion-input type ="text" [(ngModel)]="username"
+	  			placeholder="Username">
+	  			</ion-input>
+	  		</ion-item>
+	  		<ion-item>
+	  			<ion-input type ="password" [(ngModel)]="password"
+	  			placeholder="Password">
+	  			</ion-input>
+	  		</ion-item>
+	  		<ion-button (click)="checkUser()"
+	  			color="success"
+        		expand="full" size="large">
+          		Log-in 
+          		<ion-icon name="lock-open-outline"></ion-icon>
+          	</ion-button>
+
+          	<!-- display warning if username or password null -->
+          	<div *ngIf= "username==''||username==null">
+				<ion-item color="warning">Pls enter username</ion-item>
+			</div>
+			<div *ngIf= "password==''||password==null">
+				<ion-item color="warning">Pls enter password</ion-item>
+			</div>
+			
+		</ion-card-content>
+	</ion-card>
+
+	
+
+
+</ion-content>

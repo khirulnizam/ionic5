@@ -1,18 +1,34 @@
 <ion-header>
   <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
     <ion-title>Click camera icon</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-item>
-    <ion-button (click)="useCamera()">
-      <ion-icon name="camera-outline" >
-      </ion-icon>
-    </ion-button>
-  </ion-item>
+  <ion-card>
+    <img src="./assets/bannerionic.png">
+    <ion-card-header></ion-card-header>
 
-  <div *ngIf="gambar">
-    <img src={{gambar}}>
-  </div>
+    <ion-card-content>
+  
+      
+      <ion-button (click)="useCamera()"
+        expand="full" size="medium">
+          Snap picture 
+          <ion-icon name="camera-outline" >
+          </ion-icon>
+        </ion-button>
+      
+
+      <div *ngIf="gambar; else noImageYet">
+        <img src="{{gambar}}">
+      </div>
+      <ng-template #noImageYet>
+        <img src="./assets/noimagep.png">
+      </ng-template>
+  </ion-card-content>
+  </ion-card>
 </ion-content>
