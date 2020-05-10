@@ -19,9 +19,14 @@ const routes: Routes = [
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'iterate',
-    loadChildren: () => import('./iterate/iterate.module').then( m => m.IteratePageModule)
+    path: 'irepeat',
+    loadChildren: () => import('./irepeat/irepeat.module').then( m => m.IrepeatPageModule)
   },
+  {
+    path: 'displayparams/:newname/:newpostcode/:newstate',//nav with param 
+    loadChildren: () => import('./displayparams/displayparams.module').then( m => m.DisplayparamsPageModule)
+  },
+  
   
 ];
 @NgModule({

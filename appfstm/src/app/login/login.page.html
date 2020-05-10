@@ -8,40 +8,39 @@
 </ion-header>
 
 <ion-content>
-	<ion-card>
-		<img src="./assets/unlock-ionkerul.png">
-		<ion-card-header></ion-card-header>
+  <ion-card>
+    <img src="./assets/unlock-ionkerul.png">
+    <ion-card-header>
+      </ion-card-header>
 
-		<ion-card-content>
-			<ion-item>
-				<ion-input type ="text" [(ngModel)]="username"
-	  			placeholder="Username">
-	  			</ion-input>
-	  		</ion-item>
-	  		<ion-item>
-	  			<ion-input type ="password" [(ngModel)]="password"
-	  			placeholder="Password">
-	  			</ion-input>
-	  		</ion-item>
-	  		<ion-button (click)="checkUser()"
-	  			color="success"
-        		expand="full" size="large">
-          		Log-in 
-          		<ion-icon name="lock-open-outline"></ion-icon>
-          	</ion-button>
+      <ion-card-content>
+        <ion-item>
+          <ion-input [(ngModel)]="username"
+          type="text"
+          placeholder="Username">
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input [(ngModel)]="password"
+          type="password"
+          placeholder="Password">
+          </ion-input>
+        </ion-item>
+        <ion-button expand="full" (click)="checkUser()"
+        color="success">
+          Log-in <ion-icon name="lock-open-outline"></ion-icon>
+        </ion-button>
+        <ion-item color="warning"
+        *ngIf= " username==null||username=='' ">
+          Pls enter username
+      </ion-item>
+      <ion-item color="warning"
+      *ngIf= " password==null||password=='' ">
+          Pls enter password
+      </ion-item>
+        
 
-          	<!-- display warning if username or password null -->
-          	<div *ngIf= "username==''||username==null">
-				<ion-item color="warning">Pls enter username</ion-item>
-			</div>
-			<div *ngIf= "password==''||password==null">
-				<ion-item color="warning">Pls enter password</ion-item>
-			</div>
-			
-		</ion-card-content>
-	</ion-card>
-
-	
-
+      </ion-card-content>
+  </ion-card>
 
 </ion-content>

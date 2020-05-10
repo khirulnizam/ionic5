@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
+    <ion-title>Repeat+Navigate</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img src="./assets/T09_navigasi.png">
+  <ion-item>
+    <ion-input type ="text" [(ngModel)]="nama"
+    placeholder="Name...">
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type ="text" [(ngModel)]="poskod" 
+    placeholder="Poscode..."></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Choose state... </ion-label>
+    <ion-select [(ngModel)]="pilihnegeri">
+      <ion-select-option *ngFor= "let item of negeri" 
+      value="{{item}}">{{item}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button (click)="gotonext()" color="warning">
+    Send data to next page >>
+  </ion-button>
+
+</ion-content>

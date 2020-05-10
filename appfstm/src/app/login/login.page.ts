@@ -11,24 +11,20 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
   }
-
-  	username:any;
-	password:any;
-	checkUser(){
-		if(this.username=='' || this.username==null)
-		{
-			alert("Pls insert username");
-		}
-		else if(this.password=='' || this.password==null)
-		{
-			 alert("Pls insert password");
-		}
-		 
-		else{
-			alert("Welcome "+this.username);
-		}
-
-	}//end checkUser
+  username:any;
+  password:any;
+  checkUser(){
+    if(this.username==null || this.username==''){
+      alert("Pls insert username");
+    }
+    else if(this.password==null || this.password==''){
+       alert("Pls insert password");
+    }
+    else {
+      alert("Welcome user "+this.username);
+    }
+    
+  }
 
 
 }
