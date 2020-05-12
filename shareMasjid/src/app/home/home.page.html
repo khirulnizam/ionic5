@@ -1,20 +1,37 @@
+<!-- src/app/home/home.page.html -->
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Blank
+      shareMasjid
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card>
+    <img src="./assets/ionic5-sharemasjid-shorter.png">
+    <ion-card-header></ion-card-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <ion-card-content>
+      <ion-item>
+        <!-- button register -->
+        <ion-button [routerLink]="['/daftar']">Daftar
+          <ion-icon name=""></ion-icon>
+        </ion-button>
+      </ion-item>
+      <ion-item>
+        <!-- button login -->
+        <ion-button [routerLink]="['/login']">Login
+          <ion-icon name=""></ion-icon>
+        </ion-button>
+      </ion-item>
+      <ion-item>
+        <!-- button list -->
+        <ion-button>Senarai
+          <ion-icon name=""></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  
 </ion-content>

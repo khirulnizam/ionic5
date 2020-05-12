@@ -1,0 +1,35 @@
+<!-- Filename src/app/login/login.page.html -->
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img src="./assets/ionic-auth-shorter.png">
+    <ion-card-header></ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating" color="primary">Email
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="email" required>
+        </ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating" color="primary">Password</ion-label>
+        <ion-input type="password" [(ngModel)]="password" required></ion-input>
+      </ion-item>
+
+      <ion-button type="submit" (click)="cubalogin()">Log In</ion-button>
+      <hr>
+        <label *ngIf="errorMessage!=''" class="error-message">Login status: {{errorMessage}}</label>
+      
+    <p class="go-to-register">
+      No account yet? <a [routerLink]="['/daftar']">Create an account.</a>
+    </p>
+  </ion-card-content>
+</ion-card>
+</ion-content>
+<!-- Filename src/app/login/login.page.html -->
