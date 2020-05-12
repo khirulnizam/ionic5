@@ -1,0 +1,43 @@
+<!-- src/app/daftar/daftar.page.html -->
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>Daftar Pengguna</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+  <img src="./assets/ionic-auth-shorter.png">
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating" color="primary">Email
+        </ion-label>
+        <ion-input [(ngModel)]="email"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating" color="primary">Password
+        </ion-label>
+        <ion-input type="password" [(ngModel)]="password" 
+          class="form-controll" required></ion-input>
+      </ion-item>
+      
+      <ion-button (click)=cubadaftar() expand="full">
+        Daftar pengguna baru</ion-button>
+      
+      <p class="go-to-login">Dah ada akaun? 
+        <a [routerLink]="['/login']">Try to Log In.</a></p>
+    
+      <ion-item *ngIf="errorMessage!=''" 
+      color="warning" class="error-message">{{errorMessage}}
+      </ion-item>
+      <ion-item *ngIf="successMessage!=''"
+      color="success" class="success-message">{{successMessage}}
+
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<!-- src/app/daftar/daftar.page.html -->
+<!-- complete code github.com/khirulnizam/ionic5 -->

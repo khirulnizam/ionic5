@@ -1,0 +1,37 @@
+<!-- src/app/home/home.page.html -->
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      shareMasjid
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <img src="./assets/ionic5-sharemasjid-shorter.png">
+    <ion-card-header></ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <!-- button register -->
+        <ion-button [routerLink]="['/daftar']">Daftar
+          <ion-icon name=""></ion-icon>
+        </ion-button>
+      </ion-item>
+      <ion-item>
+        <!-- button login -->
+        <ion-button [routerLink]="['/login']">Login
+          <ion-icon name=""></ion-icon>
+        </ion-button>
+      </ion-item>
+      <ion-item>
+        <!-- button list -->
+        <ion-button>Senarai
+          <ion-icon name=""></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>
