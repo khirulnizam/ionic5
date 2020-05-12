@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>daftar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img src="./assets/sharefstm.png">
+  <ion-item>
+    <ion-input type="text" 
+    [(ngModel)]="email" placeholder="email...">
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="password" 
+    [(ngModel)]="password" placeholder="password...">
+    </ion-input>
+  </ion-item>
+  <ion-button (click)="cubadaftar()">Daftar
+    </ion-button>
+  
+    <ion-item *ngIf="successMessage!=''" color="success">
+      {{successMessage}}
+    </ion-item>
+    <ion-item *ngIf="errorMessage!=''" color="warning">
+      {{errorMessage}}
+    </ion-item>
+
+</ion-content>
