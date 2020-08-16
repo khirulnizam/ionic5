@@ -8,5 +8,10 @@ import { Component } from '@angular/core';
 export class HomePage {
 
   constructor() {}
+  checklogin(){
+    //if user-login go to page insert
+
+    //else go to login
+  }
 
 }

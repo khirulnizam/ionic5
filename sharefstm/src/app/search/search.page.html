@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>search</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let data of activities">
+      <ion-item detail lines="full">
+        <ion-icon name="calendar" slot="start"></ion-icon>
+        {{data.acname}}
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option color="primary">
+          <ion-icon name="share"></ion-icon>
+          </ion-item-option>
+          <!-- button update -->
+        <ion-item-option color="success">
+          <ion-icon name="create"
+          (click)="goEditpage(data.acname)"></ion-icon>
+        </ion-item-option>
+          <!-- button delete -->
+        <ion-item-option color="danger">
+          <ion-icon name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+
+    </ion-item-sliding>
+  </ion-list>
+
+</ion-content>

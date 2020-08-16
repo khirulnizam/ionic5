@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img src="./assets/sharefstm.png">
+  <ion-item>
+    <ion-input type="text" [(ngModel)]="email"
+    placeholder="Email...">
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="password" [(ngModel)]="password"
+    placeholder="Password...">
+    </ion-input>
+  </ion-item>
+  <ion-button (click)="cubalogin()">
+    Login
+  </ion-button>
+
+  <ion-item *ngIf="errorMessage!=''" 
+  color="warning">
+    {{errorMessage }}
+  </ion-item>
+  <ion-item *ngIf="successMessage!=''" 
+  color="success">
+    {{successMessage}}
+  </ion-item>
+
+</ion-content>
