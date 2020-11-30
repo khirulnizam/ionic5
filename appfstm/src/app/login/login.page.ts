@@ -12,6 +12,7 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
   username:any;
+  
   password:any;
   checkUser(){
     if(this.username==null || this.username==''){

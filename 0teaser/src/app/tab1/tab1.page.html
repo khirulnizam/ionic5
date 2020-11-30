@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+      <ion-button><ion-icon name="settings"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Ukur BMI
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-img src="/assets/banner.png"></ion-img>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Jisim (kg)</ion-label>
+        <ion-input type="number" [(ngModel)]="jisim"></ion-input>
+        
+      </ion-item>
+      <ion-item>
+        <ion-range min="0" max="200" color="secondary" 
+        [(ngModel)]="rjisim"
+        (ngModelChange)="paparberat()"
+        snaps="true" ticks="true">
+          <ion-label slot="start">1</ion-label>
+          <ion-label slot="end">200</ion-label>
+        </ion-range>
+      </ion-item>
+      
+      
+      <ion-item>
+        <ion-label>Tinggi (cm)</ion-label>
+        <ion-input type="number" [(ngModel)]="tinggi"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-range min="0" max="200" color="secondary"
+        [(ngModel)]="rtinggi"
+        (ngModelChange)="papartinggi()"
+        snaps="true" ticks="true">
+          <ion-label slot="start">1</ion-label>
+          <ion-label slot="end">200</ion-label>
+        </ion-range>
+      </ion-item>
+      <ion-label > &nbsp; </ion-label>
+      
+      <ion-button expand="block" color="secondary"
+      (click)="paparkategoribmi()">Ukur BMI</ion-button>
+
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>

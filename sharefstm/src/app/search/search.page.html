@@ -1,6 +1,9 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>search</ion-title>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Carian</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -9,7 +12,7 @@
     <ion-item-sliding *ngFor="let data of activities">
       <ion-item detail lines="full">
         <ion-icon name="calendar" slot="start"></ion-icon>
-        {{data.acname}}
+        {{data.acname}}: {{data.acdate}}
       </ion-item>
       <ion-item-options side="end">
         <ion-item-option color="primary">

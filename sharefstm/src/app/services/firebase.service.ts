@@ -40,9 +40,6 @@ export class FirebaseService {
         //return this.firestore.collection('activities').add(entry);
         return new Promise((resolve,reject)=>{
     
-          //let post_key=this.firestore.collection().ref().child('secret').push().key;
-          //_pfaiadslahahbsd
-    
           //firebase.database().ref('activities/'+post_key+'/')
           this.firestore.collection('activities').add(entry)
           .then(resp=>{
@@ -55,7 +52,8 @@ export class FirebaseService {
       }//end create entry
 
       readActivities() {
-        return this.firestore.collection("activities").snapshotChanges();
-      }
+        //fetch all records
+          return this.firestore.collection('activities').snapshotChanges();
+        }
     
 }

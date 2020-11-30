@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 //firebase & auth
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 //add for formcontrol
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -21,7 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     //firebase & auth
-    AngularFireAuthModule,
+    AngularFireAuthModule,AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     FormsModule, ReactiveFormsModule,
   ],

@@ -1,0 +1,7 @@
+{
+  "name": "appsilp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
