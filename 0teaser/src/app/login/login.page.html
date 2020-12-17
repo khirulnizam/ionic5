@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-item>
+      <ion-input [(ngModel)]="username"
+      placeholder="Nama Pengguna" type="text">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="katalaluan"
+      placeholder="Kata Laluan" type="password">
+      </ion-input>
+    </ion-item>
+    <ion-button (click)="semakdata()">Login</ion-button>
+    <ion-item *ngIf="errormessage!=null" color="danger">
+      {{errormessage}}
+    </ion-item>
+    <ion-item *ngIf="success!=null" color="success">
+      {{success}}
+    </ion-item>
+  </ion-card>
+</ion-content>

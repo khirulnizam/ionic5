@@ -1,17 +1,65 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/login']">
+        <ion-icon name="lock-open-outline">
+      </ion-icon></ion-button>
+    </ion-buttons>
     <ion-title>
-      Tab 2
+      Aduan SPAN
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card>
+    <img src="assets/banner.png">
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Tajuk aduan</ion-label>
+        <ion-input type="text" [(ngModel)]="tajuk">
+        </ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label>Deskripsi aduan</ion-label>
+        <ion-input type="text" [(ngModel)]="deskripsi">
+        </ion-input>
+      </ion-item>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+      <!-- alamat lokasi -->
+      GPS lokasi
+      <ion-item>
+        <ion-input type="text" [(ngModel)]="lokasi"
+        placeholder="Latitude: {{latitude}} 
+        Longitude {{longitude}}">
+        </ion-input>
+        &nbsp;
+      </ion-item>
+
+      <!-- select negeri -->
+      <ion-label>Negeri</ion-label>
+      <ion-item>
+        <ion-select placeholder="Pilih negeri lokasi">
+          <ion-select-option *ngFor= "let n of negeri" value="{{n}}">{{n}}
+          </ion-select-option>
+        </ion-select>
+        &nbsp;
+      </ion-item>
+
+      <ion-button (click)="tangkapgambar()" color="secondary">
+        <ion-icon name="camera" 
+        ></ion-icon>
+      </ion-button>
+      
+      <ion-button (click)="kumpuldata()">Hantar
+        <ion-icon slot="end" name="star"
+        ></ion-icon>
+      </ion-button>
+
+      <div *ngIf="base64Image">
+        <img src={{base64Image}}>
+      </div>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

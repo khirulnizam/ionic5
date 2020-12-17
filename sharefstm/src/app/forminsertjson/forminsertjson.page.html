@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Tambah Rekod Baharu</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img src="./assets/sharefstm.png">
+    <ion-item>
+      <ion-label position="floating">Tarikh Aktiviti Dijalankan</ion-label>
+      <ion-input [(ngModel)]="data.acdate" type="date"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Nama Aktiviti</ion-label>
+      <ion-input
+        [(ngModel)]="data.acname" type="text"
+        placeholder="Apakah nama aktiviti ini?"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Nama penyelaras</ion-label>
+      <ion-input
+        [(ngModel)]="data.acpic" type="text"
+        placeholder="Nama penyelaras program ini"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Butiran aktiviti</ion-label>
+      <ion-textarea
+        [(ngModel)]="data.acdesc" type="text"
+        placeholder="Jelaskan butiran lengkap aktiviti?"
+      ></ion-textarea>
+    </ion-item>
+
+    <ion-button expand="block" type="submit" 
+      (click)="sendpostdata()">
+      Tambah rekod aktiviti baharu
+    </ion-button>
+
+</ion-content>

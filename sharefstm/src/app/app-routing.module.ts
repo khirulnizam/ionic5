@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'search',
     loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
   },
+  {
+    path: 'forminsertjson',
+    loadChildren: () => import('./forminsertjson/forminsertjson.module').then( m => m.ForminsertjsonPageModule)
+  },
 ];
 
 @NgModule({

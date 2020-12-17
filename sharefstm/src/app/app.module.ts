@@ -16,7 +16,9 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 //add for formcontrol
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+// @angular/common/http
+// install by via npm install -g @angular/common
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -25,6 +27,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AngularFireAuthModule,AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     FormsModule, ReactiveFormsModule,
+    //common/http
+    HttpClientModule
   ],
   providers: [
     StatusBar,
