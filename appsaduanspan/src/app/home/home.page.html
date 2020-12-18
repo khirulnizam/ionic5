@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <p>Login</p>
+  <ion-item>
+    <ion-input [(ngModel)]="email" placeholder="email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input [(ngModel)]="password" placeholder="password"
+    type="password">
+    </ion-input>
+  </ion-item>
+
+  
+  <ion-button (click)="cubalogin()">Login</ion-button>
+</ion-content>

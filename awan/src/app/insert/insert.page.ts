@@ -49,8 +49,9 @@ export class InsertPage implements OnInit {
           console.log("Ralat: ");
          console.log(error);
        });
-       //refresh rekod display
-       this.getData();
+       
+    //refresh rekod display
+    this.getData();   
   }//hantaraduan
 
   getData() {

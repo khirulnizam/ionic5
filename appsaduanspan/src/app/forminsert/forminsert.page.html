@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Borang Aduan</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p>Hantar aduan</p>
+  <ion-item>
+    <ion-input [(ngModel)]="data.tajuk" placeholder="Tajuk"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input [(ngModel)]="data.deskripsi" placeholder="Deskripsi aduan">
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input [(ngModel)]="data.negeri" placeholder="Negeri">
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input [(ngModel)]="latitude" placeholder="GPS latitude">
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input [(ngModel)]="longitude" placeholder="GPS longitude">
+    </ion-input>
+  </ion-item>
+  <ion-button (click)="cubahantaraduan()">Hantar Aduan</ion-button>
+</ion-content>
