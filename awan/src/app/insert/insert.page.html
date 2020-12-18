@@ -6,9 +6,9 @@
 
 <ion-content padding>
   <ion-card>
-  <p>
-      Hantar Aduan
-  </p>
+    <ion-card-header>
+      <ion-card-title>Hantar Aduan</ion-card-title>
+    </ion-card-header>
 
     <ion-item lines="full">
       Tajuk <ion-input [(ngModel)]="tajuk">
@@ -24,6 +24,17 @@
    <ion-button color="primary" (click)="hantaraduan()" type="submit">Hantar Aduan
      </ion-button>
 
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Senarai Aduan</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item *ngFor="let resp of responses">
+        {{resp['tajuk']}}
+      </ion-item>
+    </ion-card-content>
   </ion-card>
 
 </ion-content>

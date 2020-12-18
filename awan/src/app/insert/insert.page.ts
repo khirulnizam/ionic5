@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient,HttpHeaders} from '@angular/common/http';
+//observable
+//import 'rxjs/add/operator/map';
+//import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-insert',
@@ -8,13 +11,20 @@ import { HttpClient,HttpHeaders} from '@angular/common/http';
 })
 export class InsertPage implements OnInit {
 
-  constructor(public httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient ) { 
+    this.getData();
+  }
   //aduan:any;
   tajuk:any;
   latitude:any;
   longitude:any;
+  responses:any;
+  //map:Observable;
+
+  
   ngOnInit() {
   }
+
   hantaraduan(){
     var headers = new HttpHeaders();
     headers.append('Accept', 'application/json');
@@ -39,7 +49,15 @@ export class InsertPage implements OnInit {
           console.log("Ralat: ");
          console.log(error);
        });
-
+       //refresh rekod display
+       this.getData();
   }//hantaraduan
+
+  getData() {
+    this.httpClient.get('https://khirulnizam.com/training/aduanlist.php').subscribe((response) => {
+    console.log(response);
+    this.responses=response;
+  });
+}
 
 }
