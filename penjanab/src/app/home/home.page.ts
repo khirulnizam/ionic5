@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { ModalPage } from '../modal/modal.page';
+import { CommonService } from '../services/common.service';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-home',
@@ -9,6 +11,7 @@ import { ModalPage } from '../modal/modal.page';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  title: string='ToDo Apps';
   card:Array<string>=[
     'card1',
     'card2',
@@ -43,8 +46,11 @@ export class HomePage {
 
   constructor(
     private router:Router,
-    private modalcontroller: ModalController
+    private modalcontroller: ModalController,
+    private commService: CommonService,
+    private storage: Storage
   ) {
+    console.log('ADD: '+commService.add(1,4));
     
   }
 
@@ -63,6 +69,18 @@ export class HomePage {
   
     await modal.present();
   
+  }
+  addDB() {
+    this.storage.set('name', 'Max');
+  }
+
+  async readDb() {
+    // this.storage.get('name').then((val) => {
+    //   console.log(val);
+    // });
+    const val = await this.storage.get('name');
+    console.log(val);
+
   }
 
 }

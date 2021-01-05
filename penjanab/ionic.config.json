@@ -1,5 +1,7 @@
 {
   "name": "penjanab",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -14,6 +14,7 @@
   </ion-header>
 
   <div id="container">
+    
 
     <ion-card color="secondary" *ngFor="let item of card">
       <ion-card-header color="tertiary">
@@ -35,7 +36,10 @@
       </ion-card-content>
     </ion-card>
 
+    <ion-input type="text" placeholder="Awesome Input" 
+    [(ngModel)]='title'>
 
+    </ion-input>
 
     <!-- simple buttons navigation
     
@@ -54,7 +58,18 @@
       Modal
     </ion-button>
   -->
+
+  <!-- code 2nd day https://github.com/Exee03/todo -->
+  <ion-button (click)="addDB()" expand="block" fill="clear" shape="round">
+    Add
+  </ion-button>
+
+  <ion-button (click)="readDb()" expand="block" fill="clear" shape="round">
+    read
+  </ion-button>
   </div>
+
+   
 
 
 </ion-content>
