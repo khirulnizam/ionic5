@@ -1,0 +1,60 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar  color="primary">
+      <ion-title size="large">Home</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+
+    <ion-card color="secondary" *ngFor="let item of card">
+      <ion-card-header color="tertiary">
+        <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+        <ion-card-title>{{item}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Awesome content
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="warning" *ngFor="let co of cardobject">
+      <ion-card-header color="tertiary">
+        <ion-card-subtitle>{{ co.subtitle }}</ion-card-subtitle>
+        <ion-card-title>{{ co.title }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        {{ co.content }}
+      </ion-card-content>
+    </ion-card>
+
+
+
+    <!-- simple buttons navigation
+    
+    <ion-button (click)="tosecondpage()" expand="block" fill="clear" 
+    shape="round" color="primary">
+      2nd Page
+    </ion-button>
+
+    <ion-button [routerLink]="['/second']" expand="block" 
+    fill="clear" shape="round">
+      AnotherPage
+    </ion-button>
+
+    <ion-button (click)="presentModal()" expand="block" 
+    fill="clear" shape="round">
+      Modal
+    </ion-button>
+  -->
+  </div>
+
+
+</ion-content>

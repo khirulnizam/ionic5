@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-title>Borang Aduan</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <p>Hantar aduan</p>
+    <ion-item>
+      <ion-input [(ngModel)]="data.tajuk" 
+      placeholder="Tajuk"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="data.latitude" 
+      placeholder="GPS latitude">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="data.longitude" 
+      placeholder="GPS longitude">
+      </ion-input>
+    </ion-item>
+    <ion-button (click)="hantaraduan()">
+      Hantar Aduan</ion-button>
+  </ion-card>
+</ion-content>

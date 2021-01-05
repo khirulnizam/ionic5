@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'listingaduan',
     loadChildren: () => import('./listingaduan/listingaduan.module').then( m => m.ListingaduanPageModule)
   },
+  {
+    path: 'jsonform',
+    loadChildren: () => import('./jsonform/jsonform.module').then( m => m.JsonformPageModule)
+  },
 ];
 
 @NgModule({
