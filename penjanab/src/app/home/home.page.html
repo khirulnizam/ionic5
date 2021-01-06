@@ -60,12 +60,16 @@
   -->
 
   <!-- code 2nd day https://github.com/Exee03/todo -->
+
+  <ion-button [routerLink]="['/todo']" expand="block" fill="clear" shape="round">
+    Todo
+  </ion-button>
   <ion-button (click)="addDB()" expand="block" fill="clear" shape="round">
     Add
   </ion-button>
 
   <ion-button (click)="readDb()" expand="block" fill="clear" shape="round">
-    read
+    Read
   </ion-button>
   </div>
 

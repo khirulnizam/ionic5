@@ -12,12 +12,15 @@ import { ModalPageModule } from './modal/modal.module';
 
 //sqlite
 import { IonicStorageModule } from '@ionic/storage';
+import { TodoformPageModule } from './todoform/todoform.module';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ModalPageModule,
-    IonicStorageModule.forRoot()],
+    IonicStorageModule.forRoot(),
+    TodoformPageModule,
+  ],
   providers: [
     StatusBar,
     SplashScreen,

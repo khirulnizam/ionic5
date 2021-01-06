@@ -19,6 +19,18 @@ const routes: Routes = [
     path: 'modal',
     loadChildren: () => import('./modal/modal.module').then( m => m.ModalPageModule)
   },
+  {
+    path: 'listpage',
+    loadChildren: () => import('./listpage/listpage.module').then( m => m.ListpagePageModule)
+  },
+  {
+    path: 'todo',
+    loadChildren: () => import('./todo/todo.module').then( m => m.TodoPageModule)
+  },
+  {
+    path: 'todoform',
+    loadChildren: () => import('./todoform/todoform.module').then( m => m.TodoformPageModule)
+  },
 ];
 
 @NgModule({
