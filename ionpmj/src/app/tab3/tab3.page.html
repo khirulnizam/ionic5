@@ -8,20 +8,29 @@
 
 <ion-content [fullscreen]="true">
   <ion-card>
-    <ion-item>
-      <ion-label>Product code</ion-label>
-      <ion-input placeholder="Input product code"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Product name</ion-label>
-      <ion-input placeholder="Input product name"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Price</ion-label>
-      <ion-input placeholder="Input product price in RM"></ion-input>
-    </ion-item>
-    <ion-button color="primary" expand="block">
-      Save as new Product
-    </ion-button>
+    <img src="assets/banner1.png">
+    <ion-card-content>
+        <ion-item>
+          <ion-label>Product code</ion-label>
+          <ion-input [(ngModel)]="productcode"
+          placeholder="Input product code"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Product name</ion-label>
+          <ion-input [(ngModel)]="productname"
+          placeholder="Input product name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Price</ion-label>
+          <ion-input [(ngModel)]="price"
+          placeholder="Input product price in RM">
+          </ion-input>
+        </ion-item>
+        <ion-button color="primary" 
+        (click)="calculatediscount()"
+        expand="block">
+          Save as new Product
+        </ion-button>
+      </ion-card-content>
   </ion-card>
 </ion-content>
