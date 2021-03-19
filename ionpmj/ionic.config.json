@@ -1,0 +1,7 @@
+{
+  "name": "ionpmj",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
