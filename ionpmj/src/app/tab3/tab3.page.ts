@@ -17,9 +17,13 @@ export class Tab3Page {
 
   calculatediscount(){
     //discount 50%
-    this.afterdisc=parseFloat(this.price)-(parseFloat(this.price)*0.5);
-    alert ("Price after 50% discount = "+this.afterdisc);
-
+    if(this.price==null){
+      alert("Please enter product price!");
+    }
+    else{//not null
+      this.afterdisc=parseFloat(this.price)-(parseFloat(this.price)*0.5);
+      alert ("Price after 50% discount = "+this.afterdisc);
+    }//end if checking price
   }
 
   //function helloword
