@@ -37,7 +37,32 @@ export class Tab2Page {
       this.productlist=data;
     });
 
-  }
+  }//getallproducts
+
+  //paste here filterproducts
+  filterproducts(event){
+    let searchkey=event.detail.value;
+    //fetch record from firestore database
+    const firebase=this.firestore.collection('products',
+      ref=>ref.where('productname','>=',searchkey))
+    .snapshotChanges()
+    .pipe(map((action)=>action.map((snapshot)=>{
+      const id=snapshot.payload.doc.id;
+      const data=snapshot.payload.doc.data() as any;
+      return{
+        id:id,
+        productname:data.productname,
+        productcode:data.productcode,
+        price:data.price
+      }
+    })));
+
+    //transform associative 
+    firebase.subscribe(data=>{
+      this.productlist=data;
+    });
+
+  }//getallproducts
   
 
   //

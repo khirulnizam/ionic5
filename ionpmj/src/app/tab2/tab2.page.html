@@ -11,7 +11,7 @@
   <ion-card>
     <img src="assets/banner-search.png">
     <ion-card-content>
-      <ion-searchbar></ion-searchbar>
+      <ion-searchbar (ionChange)="filterproducts($event)"></ion-searchbar>
       <hr>
       <ion-item *ngFor="let product of productlist">
         {{product.productcode}} {{product.productname}} 
