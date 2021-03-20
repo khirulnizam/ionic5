@@ -16,6 +16,16 @@
       <ion-item *ngFor="let product of productlist">
         {{product.productcode}} {{product.productname}} 
         Price RM{{product.price}} 
+        <ion-button color="warning"
+        (click)="updateproduct(product)"
+        slot="end">
+          <ion-icon name="create"></ion-icon>
+        </ion-button>
+        <ion-button color="danger"
+        (click)="deleteproduct(product.id)"
+        slot="end">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
       </ion-item>
 
     </ion-card-content>

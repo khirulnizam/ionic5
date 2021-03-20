@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AlertController } from '@ionic/angular';
 import { map } from 'rxjs/operators';
 
 
@@ -10,9 +11,88 @@ import { map } from 'rxjs/operators';
 })
 export class Tab2Page {
   
-  constructor(public firestore:AngularFirestore) {
+  constructor(public firestore:AngularFirestore,
+    public alertController: AlertController) {
     //this.loopproducts();
     this.getallproducts();
+  }
+
+  //delete product
+  async deleteproduct(id:any){
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Delete product',
+      message: 'Sure to delete product record?',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Cancel: blah');
+          }
+        }, {
+          text: 'Delete',
+          handler:() => {
+            console.log(id);
+            //console.log(data);//dari inputs
+            //update to firestore
+            this.firestore.collection('products').doc(id).delete();
+            console.log('Deleted record: '+id);
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+
+  }
+
+  //updateproduct function
+  async updateproduct(data:any){
+    console.log("in updateproduct");
+    //confirmation alert
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Update task',
+      message: 'Type in to update',
+      inputs:[
+        {
+          name:'editproductname',
+          value: data.productname 
+        },
+        {
+          name:'editprice',
+          value: data.price,
+          type:'number',
+        },
+    ],
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Cancel: blah');
+          }
+        }, {
+          text: 'Update',
+          handler:input => {
+            console.log(data.id);
+            console.log(input);//dari inputs
+            //update to firestore
+            this.firestore.collection('products').doc(data.id).update({
+              productname:input.editproductname,
+              price:input.editprice,
+            });
+            console.log('Update record to database');
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+
   }
 
   productlist:Array<any>=[];
