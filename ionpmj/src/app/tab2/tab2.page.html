@@ -13,13 +13,11 @@
     <ion-card-content>
       <ion-searchbar></ion-searchbar>
       <hr>
-      <ion-item *ngFor="let product of products">
-        {{product}}
+      <ion-item *ngFor="let product of productlist">
+        {{product.productcode}} {{product.productname}} 
+        Price RM{{product.price}} 
       </ion-item>
 
-      <ion-item>Product1</ion-item>
-      <ion-item>Product2</ion-item>
-      <ion-item>Product3</ion-item>
     </ion-card-content>
   </ion-card>
   

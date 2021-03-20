@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { map } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-tab2',
@@ -6,6 +9,38 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
+  
+  constructor(public firestore:AngularFirestore) {
+    //this.loopproducts();
+    this.getallproducts();
+  }
+
+  productlist:Array<any>=[];
+  //get all products
+  getallproducts(){
+    //fetch record from firestore database
+    const firebase=this.firestore.collection('products')
+    .snapshotChanges()
+    .pipe(map((action)=>action.map((snapshot)=>{
+      const id=snapshot.payload.doc.id;
+      const data=snapshot.payload.doc.data() as any;
+      return{
+        id:id,
+        productname:data.productname,
+        productcode:data.productcode,
+        price:data.price
+      }
+    })));
+
+    //transform associative 
+    firebase.subscribe(data=>{
+      this.productlist=data;
+    });
+
+  }
+  
+
+  //
   products:any=[{}];//define array variable
   //products
 
@@ -21,11 +56,5 @@ export class Tab2Page {
       console.log(this.products[x]);
     }
   }
-
-  constructor() {
-    this.loopproducts();
-  }
-
-  //
 
 }
